@@ -13,15 +13,17 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-  var UID = document.getElementById('UIDAI').value;
+  var UID = document.getElementById('youUID').value;
   var pass =document.getElementById('password').value;
   var pass1=document.getElementById('password_1').value;
   var pass2 =document.getElementById('comfirm_password').value;
   function signin() 
   {
     
-    firebase.auth().signInWithEmailAndPassword(UID, pass1).catch(function(error) {});
-  // Handle Errors here.
+    firebase.auth().signInWithEmailAndPassword(UID, pass1).catch(function(error) {  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...});
+ 
 }
 if (pass==pass2) 
 {
