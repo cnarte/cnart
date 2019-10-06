@@ -1,23 +1,25 @@
 
-  // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBlQExAfkJnTk7SdTUyCDIWDou_Sj3dE4c",
-    authDomain: "complain2solution.firebaseapp.com",
-    databaseURL: "https://complain2solution.firebaseio.com",
-    projectId: "complain2solution",
+    apiKey: "AIzaSyAUi5mUZ_1C-SEddlerdUGV1YKZKazBTnQ",
+    authDomain: "complain2solution-dc004.firebaseapp.com",
+    databaseURL: "https://complain2solution-dc004.firebaseio.com",
+    projectId: "complain2solution-dc004",
     storageBucket: "",
-    messagingSenderId: "712100308723",
-    appId: "1:712100308723:web:51793883ca7760043eb986",
-    measurementId: "G-6BB4MKMBNP"
+    messagingSenderId: "44446720580",
+    appId: "1:44446720580:web:365629f057e26310aa5211",
+    measurementId: "G-74108JL5F4"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
   var UID = document.getElementById('UIDAI').value;
   var pass =document.getElementById('password').value;
   var pass1=document.getElementById('password_1').value;
   var pass2 =document.getElementById('comfirm_password').value;
   function signin() 
   {
+    
     firebase.auth().signInWithEmailAndPassword(UID, pass1).catch(function(error) {});
   // Handle Errors here.
 }
@@ -38,32 +40,10 @@ else
 {
   var errorCode = error.code;
   var errorMessage = error.message;
+  console.log(errorCode);
 }    
 
 
 
 
 
-     <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
-    <script type="text/javascript">
-      // FirebaseUI config.
-      var uiConfig = {
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          
-          firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          ],
-       
-      };
-
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-
-
-  
-  firebase.analytics();
