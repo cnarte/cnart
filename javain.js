@@ -21,24 +21,17 @@
     firebase.auth().signInWithEmailAndPassword(UID, pass1).catch(function(error) {});
   // Handle Errors here.
 }
-if (pass==pass2) 
-{
-    function logup()
+
+
+    function logup(pass==pass2)
     {
-      firebase.auth().createUserWithEmailAndPassword(UID, pass).catch(function(error) {
+      firebase.auth().createUserWithEmailAndPassword(UID, pass).catch(function(pass!=pass2) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-});
-
-    }
-}
-else
-{
-  var errorCode = error.code;
-  var errorMessage = error.message;
-}    
+});}
+    
 
 
 
