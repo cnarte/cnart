@@ -15,24 +15,29 @@
   var UID = document.getElementById('UIDAI').value;
   var pass =document.getElementById('password').value;
   var pass2 =document.getElementById('password_1').value;
-  function login() {
-    window.alert("working");
-    if (user != null) 
+  function signin() 
+  {
+    firebase.auth().signInWithEmailAndPassword(UID, password).catch(function(error) {});
+  // Handle Errors here.
+}
+if (pass==pass2) 
+{
+    function logup()
     {
-  name = user.displayName;
-  email = user.UID;
-  
-  emailVerified = user.emailVerified;
-  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                   // this value to authenticate with your backend server, if
-                   // you have one. Use User.getToken() instead.
-   }
-    // body...
-  }
-  var user = firebase.auth().currentUser;
-var name,UID, emailVerified;
+      firebase.auth().createUserWithEmailAndPassword(UID, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
 
-
+    }
+}
+else
+{
+  var errorCode = error.code;
+  var errorMessage = error.message;
+}    
 
 
 
