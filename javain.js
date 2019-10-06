@@ -17,6 +17,7 @@
   var pass =document.getElementById('password').value;
   var pass1=document.getElementById('password_1').value;
   var pass2 =document.getElementById('comfirm_password').value;
+  console.log(UID," ",pass," ",pass1," ",pass2," ",)
   function signin() 
   {
     
