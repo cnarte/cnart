@@ -18,14 +18,14 @@
   var pass2 =document.getElementById('comfirm_password').value;
   function signin() 
   {
-    firebase.auth().signInWithEmailAndPassword(UID, password_1).catch(function(error) {});
+    firebase.auth().signInWithEmailAndPassword(UID, pass1).catch(function(error) {});
   // Handle Errors here.
 }
 if (pass==pass2) 
 {
     function logup()
     {
-      firebase.auth().createUserWithEmailAndPassword(UID, password).catch(function(error) {
+      firebase.auth().createUserWithEmailAndPassword(UID, pass).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
